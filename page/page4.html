@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8">
+
+<link href="/assets/css/main.css" rel="stylesheet" media="screen"/>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+	var canvas, context;
+	function init() {
+		canvas = document.getElementById("myCanvas");
+		context = canvas.getContext("2d");
+
+		context.lineWidth = 2;
+		context.strokeStyle="black";
+
+		canvas.addEventListener("mousemove",function(e) {move(e)}, false);
+		canvas.addEventListener("mousedown",function(e) {down(e)}, false);
+		canvas.addEventListener("mouseup",function(e) {up(e)}, false);
+		canvas.addEventListener("mouseout",function(e) {out(e)}, false);
+
+		var startX = 0, startY = 0;
+		var drawing = false;
+		function draw(curX, curY) {
+			context.beginPath();
+			context.moveTo(startX, startY);
+			context.lineTo(curX, curY);
+			context.stroke();
+		}
+		function down(e) {
+			startX = e.offsetX; startY = e.offsetY;
+			drawing = true;
+		}
+		function up(e) { drawing = false;}
+		function move(e) {
+			if(!drawing) return;
+			var curX = e.offsetX, curY=e.offsetY;
+			draw(curX, curY);
+			startX = curX; startY = curY;
+		}
+		function out(e) {drawing = false;}
+	}
+</script>
+
+</head>
+
+<body onload="init()">
+<div class="contents">
+
+ <fieldset>
+<legend><h2>관련 영상</h2></legend> 
+<iframe width="856" height="480" src="https://www.youtube.com/embed/8IsdCz1U5uM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h4 style="line-height: 200%; text-align: center;"> 위 영상은 VR기술에 관한 영상입니다.</h4>
+ </fieldset>
+
+<br>
+<br>
+
+<fieldset>
+	<h2 style="text-align: center;">설문 조사 사은품 증정 사인</h2>
+<form>
+
+	성별과 나이, 전화번호를 입력해주세요.<br>
+		성별 : 
+		<input type="radio" name="gender" value="1" >
+		남자
+		<input type="radio" name="gender" value="2">
+		여자<br>
+		나이:&nbsp;<input type="text"><br>
+		전화번호:&nbsp;<input type="text"><br><br>
+
+		다음 문항에 대해 5점 척도로 답해주세요.<br><br>
+		본 내용의 주제는 만족스러운가? 1<input type="range" min="0" max="5">5 <br><br>
+		본 주제에 맞는 내용으로 작성되었는가? 1<input type="range" min="0" max="5">5 <br><br>
+		본 내용의 양은 적당한가? 1<input type="range" min="0" max="5">5 <br><br>
+
+
+		기타 의견 사항<br>
+		<table>
+			<tr>
+		<td><textarea cols="50" rows="10">의견을 적어주세요.</textarea></td>
+		<td><canvas id="myCanvas" style="background-color: gray;" width="200" height="150"></canvas></td>
+
+</tr>
+</table><br>
+	<button onclick="confirm1()">제출</button>
+
+	<script type="text/javascript">
+		function confirm1() {
+if(!confirm("제출하시겠습니까?")) {
+	alert("제출을 취소했습니다.");
+}
+else{
+	alert("제출하였습니다.");
+}
+
+}
+	</script>
+
+</form>
+</fieldset>
+
+</div>
+
+	<div class="footer"></div>
+
+</body>
+</html>

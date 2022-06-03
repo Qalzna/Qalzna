@@ -1,0 +1,107 @@
+@charset "utf-8";
+/* CSS Document */
+
+.header {
+  height: 150px;
+  float:none;
+  background-color: aliceblue;
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 10px 10px 10px lightgray;
+
+
+  
+}
+.header-left {
+	padding-top: 10px;
+	font: 30px bold;
+	margin:20px auto;
+	margin-top: 10px;
+}
+
+.topMenu {
+height: 30px;
+width: 850px;
+margin:0 auto;
+padding : 25px;
+
+
+}
+
+.topMeun ul {
+	width:1020px; margin:0px auto; padding:0px;
+
+}
+
+.topMenu ul li {
+
+	list-style: none;
+	color: black;
+	float: left;
+	line-height: 30px;
+	text-align: center;
+
+
+}
+
+.topMenu .menuLink {
+	text-decoration:none;
+	color: black;
+	display: block;
+	width: 150px;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+.topMenu .menuLink:hover {
+color: greenyellow;
+background-color: aliceblue;
+
+}
+
+.contents {
+	height: 600px;
+	margin:40 auto;
+	text-align:center;	
+
+
+}
+.des {
+	height: 1200px;
+	margin-left: 30px;
+	width:65%;
+	padding: 0% 15%;
+	clear: both;
+}
+.summary {
+	height: 1200px;
+	margin-left: 100px;
+	width:55%;
+	padding: 0% 15%;
+	clear: both;
+}
+h2 {
+	text-align: center;
+	color:darkred;
+	line-height: 180%;
+}
+p {
+	line-height: 170%;
+}
+ul li {
+line-height: 170%;
+}
+ol li {
+line-height: 170%;
+
+}
+
+form {
+	background-color: greenyellow;	
+	padding : 4px 20px;
+}
+
+.footer {
+	height: 200px;
+	margin:0 auto;
+
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8">
+<!--css파일이 들어있는 위치 입니다.-->
+<link href="/assets/css/main.css" rel="stylesheet" media="screen"/>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+<br> 
+<!--Chapter 2 : HTML 기본 문서 만들기(하이퍼링크)-->
+<h4 style="text-align: center;"><a href="https://kongju.ac.kr/" >공주대학교 소프트웨어공학부</a></h4>
+<br>
+<div class="contents">
+	<!--Chapter 2 : HTML 기본 문서 만들기(이미지 삽입)-->
+<img src="source/image/Vrimg1.jpg" width="450" height="350" >
+
+<div>
+	<!--Chapter 2 : HTML 기본 문서 만들기(미디어 삽입)-->
+<audio controls loop autoplay="true" id="myaudio">
+<source src="1.mp3" type="audio/mp3" width="200">
+    <!--Chapter 8 documnet객체(음악 자동재생)-->
+<script>
+var audio=document.getElementById('myaudio');
+audio.volume=0.3;
+</script>
+</audio>
+</div>
+
+ <h1 id="clock" style="color:black;"> clock</h1>
+    
+    <script> //현재시간, 요일을 표시해주는 시계 
+        var Time = document.getElementById("clock");
+        function clock() {
+            var time = new Date(); //Chapter 7 : 자바스크립트 코어 객체의 배열(코어객체(Date사용))
+
+            var month = time.getMonth();
+            var date = time.getDate();
+            var day = time.getDay();
+            var week = ['일', '월', '화', '수', '목', '금', '토'];
+
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+
+            Time.innerText = 
+            `${month + 1}월 ${date}일 ${week[day]}요일 ` +
+            `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+                
+        }
+        clock();
+        setInterval(clock, 1000); // 1초마다 실행
+    </script>
+
+</div>
+
+<!--Chapter 10 : 윈도우와 브라우저 관련 객체(window 객체를 사용한 인터넷 창 열기)-->
+	<div id="footer">이미지 출처 <br>
+		<script>
+			function load(URL) {
+				window.open(URL,"Win", "left=300, top=300, width=800, height=800");
+			}
+		</script>
+		<a href="javascript:load('https://imgsponsor.tistory.com/1006') ">https://imgsponsor.tistory.com/1006 </a>
+	</div>
+
+
+
+
+</body>
+</html>
